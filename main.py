@@ -33,10 +33,17 @@ class Interest(Scene):
             return (1+(1/4))**(floor(4*x))
         
         def f4(x):
-            return (1+(1/1000))**(floor(x*1000))
+            return (1+(1/5000))**(floor(x*5000))
         
 
 
-        graph = ax.plot(f4, x_range=[0, 1.0], use_smoothing=False, stroke_color=RED)
+        #graph = ax.plot(f1, x_range=[0, 1.1], stroke_color=RED, use_smoothing=False)
+        #graph = ax.plot(f2, x_range=[0, 1.1], stroke_color=RED, use_smoothing=False)
+        #graph = ax.plot(f3, x_range=[0, 1.1], stroke_color=RED, use_smoothing=False)
+        graph = ax.plot(f4, x_range=[0, 1.0], stroke_color=RED, use_smoothing=False)
 
-        self.add(ax, graph)
+        endpoint = Dot(graph.get_end(), color=RED)
+
+
+        self.add(ax, graph, endpoint)
+

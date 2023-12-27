@@ -44,6 +44,11 @@ class Interest(Scene):
 
         endpoint = Dot(graph.get_end(), color=RED)
 
+        #xLine = DashedLine([endpoint.get_x(), ax.get_origin()[1], 0], [endpoint.get_x(), endpoint.get_y(), 0], color=RED)
+        #yLine = DashedLine([ax.get_origin()[0], endpoint.get_y(), 0], [endpoint.get_x(), endpoint.get_y(), 0], color=RED)
 
-        self.add(ax, graph, endpoint)
+        #yDot = Dot([ax.get_origin()[0], endpoint.get_y(), 0], color=RED)
+        #yQM = Text("?", color=RED, font="Cambria", weight=LIGHT).move_to(yDot).shift(LEFT*0.5)
+
+        self.add(ax, graph, endpoint) #self.add(ax, graph, endpoint, xLine, yLine, yDot, yQM)
 

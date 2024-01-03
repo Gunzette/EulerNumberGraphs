@@ -14,6 +14,7 @@ class Interest(Scene):
         x.numbers.set_color(BLACK)
         y = ax.get_y_axis()
         y.numbers.set_color(BLACK)
+        labels = ax.get_axis_labels(x_label=MathTex('Zeit (Jahre)'), y_label=MathTex('Geld (Euro)')).set_color(BLACK)
 
         def f1(x):
             if x < 1:
@@ -40,7 +41,7 @@ class Interest(Scene):
         #graph = ax.plot(f1, x_range=[0, 1.1], stroke_color=RED, use_smoothing=False)
         #graph = ax.plot(f2, x_range=[0, 1.1], stroke_color=RED, use_smoothing=False)
         #graph = ax.plot(f3, x_range=[0, 1.1], stroke_color=RED, use_smoothing=False)
-        graph = ax.plot(f4, x_range=[0, 1.0], stroke_color=RED, use_smoothing=False)
+        graph = ax.plot(f4, x_range=[0, 1.0], stroke_color=RED, use_smoothing=True)
 
         endpoint = Dot(graph.get_end(), color=RED)
 
@@ -50,5 +51,8 @@ class Interest(Scene):
         #yDot = Dot([ax.get_origin()[0], endpoint.get_y(), 0], color=RED)
         #yQM = Text("?", color=RED, font="Cambria", weight=LIGHT).move_to(yDot).shift(LEFT*0.5)
 
-        self.add(ax, graph, endpoint) #self.add(ax, graph, endpoint, xLine, yLine, yDot, yQM)
+        self.add(ax, graph, endpoint, labels) 
+        #self.add(ax, graph, endpoint, xLine, yLine, yDot, yQM, labels)
+
+        #TODO GESTRICHELTE LINIE ZUM ENDWERT, ENDWERT HINSCHREIBEN
 

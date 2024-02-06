@@ -1,7 +1,7 @@
 from manim import *
 from math import floor
 
-config.background_color = ManimColor("#EEEFED")
+config.background_color = ManimColor("#E0E0D8")
 
 class Interest(Scene):
     def construct(self):
@@ -46,13 +46,13 @@ class Interest(Scene):
         endpoint = Dot(graph.get_end(), color=RED)
 
         #xLine = DashedLine([endpoint.get_x(), ax.get_origin()[1], 0], [endpoint.get_x(), endpoint.get_y(), 0], color=RED)
-        #yLine = DashedLine([ax.get_origin()[0], endpoint.get_y(), 0], [endpoint.get_x(), endpoint.get_y(), 0], color=RED)
+        yLine = DashedLine([ax.get_origin()[0], endpoint.get_y(), 0], [endpoint.get_x(), endpoint.get_y(), 0], color=RED)
 
-        #yDot = Dot([ax.get_origin()[0], endpoint.get_y(), 0], color=RED)
-        #yQM = Text("?", color=RED, font="Cambria", weight=LIGHT).move_to(yDot).shift(LEFT*0.5)
+        yDot = Dot([ax.get_origin()[0], endpoint.get_y(), 0], color=RED)
+        yQM = Text("?", color=RED, font="Cambria", weight=LIGHT).move_to(yDot).shift(LEFT*0.5)
 
-        self.add(ax, graph, endpoint, labels) 
-        #self.add(ax, graph, endpoint, xLine, yLine, yDot, yQM, labels)
+        #self.add(ax, graph, endpoint, labels) 
+        self.add(ax, graph, endpoint, yLine, yDot, yQM, labels)
 
         #TODO GESTRICHELTE LINIE ZUM ENDWERT, ENDWERT HINSCHREIBEN
 

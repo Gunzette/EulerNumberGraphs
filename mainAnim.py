@@ -76,8 +76,10 @@ class Hmethod(Scene):
             lambda x: x.move_to(hbrace.get_center()-UP*0.4)
         )
 
-        self.play(t.animate.set_value(0), FadeTransform(lim1tex, lim2tex), FadeIn(hbrace, hlabel))
+        self.play(t.animate.set_value(0), FadeTransform(lim1tex, lim2tex), FadeIn(hbrace, hlabel, aLabel, xLabel))
 
         self.wait()
 
-        self.play(t.animate.increment_value(1.99), run_time=5, rate_func=rate_functions.smoothstep)
+        self.play(t.animate.increment_value(1.59), run_time=4, rate_func=rate_functions.linear)
+
+        self.play(t.animate.increment_value(0.40), FadeOut(xLabel, aLabel), run_time=1, rate_func=rate_functions.linear)
